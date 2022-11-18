@@ -72,11 +72,11 @@ const TOMORROW = formattedDate(
   new Date(new Date().setDate(dateToday.getDate() + 1))
 );
 
-todos.add({ title: "Submit report", dueDate: YESTERDAY, completed: false });
-todos.add({ title: "Pay revenue", dueDate: TODAY, completed: true });
-todos.add({ title: "Service girlfriend", dueDate: TODAY, completed: false });
+todos.add({ title: "Submit assignment", dueDate: YESTERDAY, completed: false });
+todos.add({ title: "Pay rent", dueDate: TODAY, completed: true });
+todos.add({ title: "Service Vehicle", dueDate: TODAY, completed: false });
 todos.add({ title: "File taxes", dueDate: TOMORROW, completed: false });
-todos.add({ title: "Pay motor bill", dueDate: TOMORROW, completed: false });
+todos.add({ title: "Pay electric bill", dueDate: TOMORROW, completed: false });
 
 console.log("My Todo-list\n\n");
 
