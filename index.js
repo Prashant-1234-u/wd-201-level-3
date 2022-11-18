@@ -9,26 +9,26 @@ const todoList = () => {
 
   const overdue = () => {
     return all.filter((item) => {
-      return item.dueDate <= yesterday && item.completed === false;
+      return item.dueDate <= YESTERDAY && item.completed === false;
     });
   };
 
   const dueToday = () => {
     return all.filter((item) => {
-      return item.dueDate === today;
+      return item.dueDate === TODAY;
     });
   };
 
   const dueLater = () => {
     return all.filter((item) => {
-      return item.dueDate === tomorrow;
+      return item.dueDate === TOMORROW;
     });
   };
 
   const toDisplayableList = (list) => {
     let mylist = [];
     list.forEach((item) => {
-      if (item.dueDate === today) {
+      if (item.dueDate === TODAY) {
         if (item.completed === true) {
           mylist.push(`[x] ${item.title}`);
         } else {
@@ -55,7 +55,7 @@ const todoList = () => {
     toDisplayableList,
   };
 };
-//BEAWARE OF CHANGE ANYTHING//
+//$$BEAWARE OF CHANGE ANYTHING$$//
 
 const todos = todoList();
 
@@ -64,19 +64,19 @@ const formattedDate = (d) => {
 };
 
 var dateToday = new Date();
-const today = formattedDate(dateToday);
-const yesterday = formattedDate(
+const TODAY = formattedDate(dateToday);
+const YESTERDAY = formattedDate(
   new Date(new Date().setDate(dateToday.getDate() - 1))
 );
-const tommorrow = formattedDate(
+const TOMORROW = formattedDate(
   new Date(new Date().setDate(dateToday.getDate() + 1))
 );
 
-todos.add({ title: "Submit report", dueDate: yesterday, completed: false });
-todos.add({ title: "Pay revenue", dueDate: today, completed: true });
-todos.add({ title: "Service girlfriend", dueDate: today, completed: false });
-todos.add({ title: "land taxes", dueDate: tomorrow, completed: false });
-todos.add({ title: "Pay motor bill", dueDate: tomorrow, completed: false });
+todos.add({ title: "Submit report", dueDate: YESTERDAY, completed: false });
+todos.add({ title: "Pay revenue", dueDate: TODAY, completed: true });
+todos.add({ title: "Service girlfriend", dueDate: TODAY, completed: false });
+todos.add({ title: "File taxes", dueDate: TOMORROW, completed: false });
+todos.add({ title: "Pay motor bill", dueDate: TOMORROW, completed: false });
 
 console.log("My Todo-list\n\n");
 
